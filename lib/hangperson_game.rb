@@ -43,7 +43,7 @@ class HangpersonGame
         for i in 0..word.length
           if word[i] == letter
             word_with_guesses[i] = letter
-            @check_win_or_lose = :win if guesses.chars.sort == word.chars.sort
+            @check_win_or_lose = :win if !word_with_guesses.include? '-'
           end
         end
         return true
