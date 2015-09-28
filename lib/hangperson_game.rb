@@ -30,9 +30,12 @@ class HangpersonGame
   
   # When a user makes a guess
   def guess(letter)
-    throw 'Error: Nil guess not allowed' if letter.nil?
-    throw 'Error: Empty guess' if letter == ''
-    throw 'Error: Guess not a letter' if !letter.match(/[a-zA-Z]/)
+    #throw 'Error: Nil guess not allowed' if letter.nil?
+    #throw 'Error: Empty guess' if letter == ''
+    #throw 'Error: Guess not a letter' if !letter.match(/[a-zA-Z]/)
+    raise ArgumentError if letter.nil?
+    raise ArgumentError if letter == ''
+    raise ArgumentError if !letter.match(/[a-zA-Z]/)
 
     
     letter.downcase!
